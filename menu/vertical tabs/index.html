@@ -40,19 +40,19 @@
         function openCity(evt, cityName) {
             var i, tabcontent, tablinks;
 
-            /*lấy tất cả các môi trường từ class tablinks và ẩn chúng */
+            /*Nhận tất cả các phần tử có class = "tabcontent" và ẩn chúng */
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
 
-            /*lấy tất cả các môi trường từ class tablinks và xóa cúng khỏi thẻ active */
+            /*Nhận tất cả các phần tử có class = "tablinks" và xóa lớp "active" */
             tablinks = document.getElementsByClassName("tablinks");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active ", "");
             }
 
-            /* hiện ra tab hiện tại , và thêm 1 "active" class từ button được mở bởi tab*/
+            /* Hiển thị tab hiện tại và thêm lớp "hoạt động" vào liên kết đã mở tab*/
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.classname += "active";
 
