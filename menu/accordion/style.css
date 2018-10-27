@@ -1,0 +1,37 @@
+/* style cho buutton được sử dụng để mở và đóng bảng accordion */
+.accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer; /*hiện thị con trot chuột khi di chuyển con trỏ vào thành phần*/
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    border: none;
+    outline: none;/*xác định đường viền bao ngoài */
+    transition: 0.4s; /*xác định một quá trình chuyển đổi khi có một hành động*/
+
+}
+/* thêm màu nền cho button nếu n dduocj click(thêm class active với js), và khi bạn di chuyển chuột qua nó(hover)*/
+.active, .accordion:hover{
+    background-color: #ccc;
+}
+/* style cho bảng accordion, note: ẩn bởi ..*/
+.panel{
+    padding: 0 18px;
+    background-color: white;
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+.accordion:after{
+    content: '\002B/'; /*ký tự unicode cho dấu cộng*/
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+.active:after{
+    content: '\2212/'; /*ký tự unicode cho dấu trừ*/
+}

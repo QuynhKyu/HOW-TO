@@ -1,0 +1,33 @@
+/* style cho the tab*/
+.tab{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+/* style cho button được sửu dụng trong tab content*/
+.tab button{
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+/* thay đổi backgroud màu của button khi di chuột đến*/
+
+.tab button:hover{
+    background-color: #ddd;
+}
+/* tạo 1 hành động ở thẻ tablink*/
+.tab button.active{
+    background-color: #ccc;
+}
+/* style cho tab content*/
+.tabcontent{
+    float: left;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}

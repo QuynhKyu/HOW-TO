@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <!-- tab links-->
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')"> London  </button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')"> Paris  </button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')"> Tokyo  </button>
+    </div>
+
+    <!--tab content-->
+
+    <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London là thủ đô của nước Anh</p>
+    </div>
+
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris là thủ đô của nước Pháp</p>
+    </div>
+
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo là thủ đô của nước Nhật</p>
+    </div>
+
+    <!-- javascript-->
+
+    <script type="text/javascript">
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+
+            /*lấy tất cả các môi trường từ class tablinks và ẩn chúng */
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            /*lấy tất cả các môi trường từ class tablinks và xóa cúng khỏi thẻ active */
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active ", "");
+            }
+
+            /* hiện ra tab hiện tại , và thêm 1 "active" class từ button được mở bởi tab*/
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.classname += "active";
+
+        }
+    </script>
+</body>
+</html>
