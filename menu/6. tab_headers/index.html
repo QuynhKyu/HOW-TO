@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /* kiểu cho nút tab*/
+        .tablink{
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;/*định dạng đường viền bao ngoài*/
+            cursor: pointer;/*khi di chuyển trên tab sẽ hiện hình bàn tay chỉ*/
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        /*thay đổi màu của nút khi di chuột tới*/
+        .tablink:hover{
+            background-color: #777;
+        }
+        /*cài đặt kiểu mặc định cho nội dung tab*/
+        .tabcontent{
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+        }
+        /* kiểu cho từng tab cá nhân*/
+        #London{
+            background-color: red;
+        }
+        #Paris{
+            background-color: green;
+        }
+        #Tokyo{
+            background-color: blue;
+        }
+        #Oslo{
+            background-color: orange;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function openCity(cityName, elmt, color) {
+            /*ẩn tất cả các phần tử với class = "tabcontent" theo mặc định*/
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for(i = 0; i< tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+            /*xóa các màu ở các nút/tablinks*/
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i< tablinks.length; i++){
+                tablinks[i].style.backgroundColor = "";
+            }
+            /*hiển thị nội dung tab cụ thể */
+            document.getElementById(cityName).style.display = "block";
+            /*thêm nội dung màu cho nút đã được mở ở tabcontent*/
+            elmt.style.backgroundColor = color;
+        }
+        /*lấy phần tử có id="defaultOpen và click vào nó"*/
+        document.getElementById("defaultOpen").click();
+    </script>
+</head>
+<body>
+    <div id="London" class="tabcontent">
+        <h2> London </h2>
+        <p> London là thủ đô của nước Anh </p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <h2> Paris </h2>
+        <p> Paris là thủ đô của nước Pháp </p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h2> Tokyo </h2>
+        <p> Tokyo là thủ đô của nước Nhật </p>
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+        <h2> Oslo </h2>
+        <p> Oslo là thủ đô của nước Na Uy </p>
+    </div>
+
+    <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen"> London </button>
+    <button class="tablink" onclick="openCity('Paris', this, 'green')" > Paris </button>
+    <button class="tablink" onclick="openCity('Tokyo', this, 'blue')" > Tokyo </button>
+    <button class="tablink" onclick="openCity('Oslo', this, 'orange')" > Oslo </button>
+</body>
+</html>

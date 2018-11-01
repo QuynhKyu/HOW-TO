@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /*Thêm màu nền đen vào điều hướng trên cùng*/
+        .topnav{
+            background-color: black;
+            overflow: hidden;
+        }
+        /*Tạo kiểu liên kết bên trong thanh điều hướng*/
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        /* thay đổi màu của liên kết khi di chuột tới*/
+        .topnav a:hover{
+            background-color: #ddd;
+            color: black;
+        }
+        /*thêm màu cho hành đọng của liên kết*/
+        .topnav a.active{
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#home" class="active"> Home </a>
+        <a href="#news" > News </a>
+        <a href="#contact" > Contact </a>
+        <a href="#about" > About </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {box-sizing: border-box}
+        body {font-family: "Lato", sans-serif;}
+        /*kiểu cho tab*/
+        .tab{
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 30%;
+            height: 300px;
+        }
+        /*kiểu cho nút được sử dụng để mở tabcontent*/
+        .tab button{
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;/*định dạng đường viền bao ngoài*/
+            text-align: left;
+            cursor: pointer;/*hiển thị bàn tay trỏ khi di chuyển đến tabcontent */
+        }
+        /*thay đổi màu của nút khi di chuyển chuột */
+        .tab button:hover{
+            background-color: #ddd;
+        }
+        /*tạo 1 hành động cho lớp "tab button"*/
+        .tab button.active{
+            background-color: #ccc;
+        }
+        /* kiểu cho tabcontent*/
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ccc;
+            width: 70%;
+            border-left: none;
+            height: 300px;
+            display: none;
+        }
+        /*Xóa phần nổi sau tab*/
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+    <script type="text/javascript">
+        function openCity(event, cityName) {
+            var i , tabcontent, tablinks;
+            /*ẩn tất cả các phần tử với class = "tabcontent" theo mặc định*/
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i ++){
+                tabcontent[i].style.display = "none";
+            }
+            /*xóa các màu ở các nút/tablinks*/
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i< tablinks.length; i++){
+                tablinks[i].className= tablinks[i].className.replace("active", "");
+            }
+            /*Hiển thị tab hiện tại và thêm lớp "hoạt động" vào liên kết đã mở tab*/
+            document.getElementById(cityName).style.display= "block";
+            event.currentTarget.className += "active";
+        }
+    </script>
+</head>
+<body>
+
+        <!-- tab links-->
+        <div class="tab">
+            <button class="tablinks" onmouseover="openCity(event, 'London')">London</button>
+            <button class="tablinks" onmouseover="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onmouseover="openCity(event, 'Tokyo')">Tokyo</button>
+        </div>
+
+        <!--tab content-->
+
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+
+</body>
+</html>

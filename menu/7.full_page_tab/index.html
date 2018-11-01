@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {box-sizing: border-box}
+        /* Đặt chiều cao của phần thân và  cả khung  100% để bật "tab trang đầy đủ" */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+        }
+        /* kiểu cho tablinks*/
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        .tablink:hover {
+            background-color: #777;
+        }
+        /*Tạo kiểu cho nội dung tab (và thêm chiều cao: 100% cho toàn bộ nội dung trang)*/
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+        /*màu cho từng tab riêng biệt*/
+        #Home{
+            background-color: red;
+        }
+        #News{
+            background-color: green;
+        }
+        #Contact{
+            background-color: blue;
+        }
+        #About{
+            background-color: orange;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        function openPage(pageName, elmt, color) {
+            /*Ẩn tất cả các phần tử với class = "tabcontent" theo mặc định*/
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            /*Xóa màu nền của tất cả các nút / liên kết tab*/
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            /*Hiển thị nội dung tab cụ thể*/
+            document.getElementById(pageName).style.display = "block";
+            /*Thêm màu cụ thể vào nút được sử dụng để mở nội dung tab*/
+            elmt.style.backgroundColor =  color;
+        }
+        /*Lấy phần tử có id = "defaultOpen" và nhấp vào nó*/
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</head>
+<body>
+    <div id="Home" class="tabcontent">
+        <h2> Home </h2>
+        <p> Home is where the heart is..</p>
+    </div>
+
+    <div id="News" class="tabcontent">
+        <h2> News </h2>
+        <p> Some news this fine day </p>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <h2> Contact </h2>
+        <p> Get in touch, or swing by for a cup os coffee </p>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h2> About </h2>
+        <p> Who we are and what we do </p>
+    </div>
+
+    <button class="tablink" onclick="openPage('Home', this, 'red')"> Home </button>
+    <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen"> News </button>
+    <button class="tablink" onclick="openPage('Contact', this, 'blue')"> Contact </button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')"> About </button>
+
+
+
+</body>
+</html>
