@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            font-family: Arial, sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        /*Tạo bố cục cột với Flexbox*/
+        .row{
+            display: flex;
+        }
+        /* cột trái (menu)*/
+        .left{
+            flex: 35%;
+            padding: 15px 0;
+        }
+        .left h2{
+            padding-left: 8px;
+        }
+        /*cột bên phỉ (page content)*/
+        .right{
+            flex: 65%;
+            padding: 15px;
+        }
+
+        /*Kiểu cho ô tìm kiếm*/
+        #mySearch{
+            width: 100%;
+            font-size: 17px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+        /* kiểu cho thanh điều hướng menu*/
+        #myMenu{
+            list-style-type: none;/*thiết lập kiểu cho 1 danh sách */
+            padding: 0;
+            margin: 0;
+        }
+        /*kiểu cho thanh điều hướng liên kết*/
+        #myMenu li a{
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+        }
+        #myMenu li a:hover{
+            background-color: gray;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        function myFunction() {
+            // khai báo biến
+            var input, filter, ul, li, a, i;
+            input  = document.getElementById("mySearch");
+
+            // toUppercase() chuyển đổi tất cả các ký tự trong 1 chuỗi về dạng chữ in hoa
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+
+            /*Lặp qua tất cả các mục danh sách và ẩn những mục không phù hợp với truy vấn tìm kiếm*/
+            for (i = 0; i < li.length; i++)
+            {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1 )
+                {
+                    li[i].style.display = "";
+                }else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="row">
+    <div class="left" style="background-color: #bbb">
+         <h2> Menu </h2>
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search ...." title="Type in a category">
+
+         <ul id="myMenu">
+            <li><a href="#"> HTML </a></li>
+            <li><a href="#"> CSS </a></li>
+            <li><a href="#"> JavaScript </a></li>
+            <li><a href="#"> PHP </a></li>
+            <li><a href="#"> Python </a></li>
+            <li><a href="#"> jQuery </a></li>
+            <li><a href="#"> SQL </a></li>
+            <li><a href="#"> Bootstrap </a></li>
+            <li><a href="#"> Node.js </a></li>
+          </ul>
+    </div>
+
+    <div class="right" style="background-color: #ddd">
+        <h2> Page content </h2>
+        <p> Start to type for a specific category inside the search bar to "filter" the search options </p>
+        <p> Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text.. </p>
+        <p> Some text.. </p>
+    </div>
+</div>
+</body>
+</html>

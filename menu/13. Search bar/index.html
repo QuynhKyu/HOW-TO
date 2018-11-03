@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        body{
+            font-family: Arial, sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        /* thêm màu nền cho thanh điều hướng bên trên*/
+        .topnav{
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+        /* kiểu cho liên kết ngoài thanh điều hướng*/
+        .topnav a{
+            float: left;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 17px;
+            display: block;
+        }
+        .topnav a:hover{
+            background-color: #eee;
+            color: black;
+        }
+        /*Tạo kiểu cho phần tử "hoạt động" để làm nổi bật trang hiện tại */
+        .topnav a.active{
+            background-color: #2196F3;
+            color: white;
+        }
+        /* tạo kiểu cho ô tìm kiếm bên ngoài thanh điều hướng*/
+        .topnav input[type=text]{
+            float: right;
+
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+            border: none;
+        }
+        /*Khi màn hình rộng hơn 600px, hãy sắp xếp các liên kết và trường tìm kiếm theo chiều dọc thay vì theo chiều ngang*/
+        @media screen and(max-width: 600px){
+            .topnav a, .topnav input[type=text], .topnav .container-search button{
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text]{
+                border: 1px solid #ccc;
+            }
+        }
+        .topnav  .container-search{
+            float: right;
+        }
+        .topnav .container-search button{
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        .topnav .container-search button:hover{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#home" class="active"> Home </a>
+        <a href="#about" > About </a>
+        <a href="#contact" > Contact </a>
+        <div class="container-search">
+            <form action="">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search.." name="search">
+
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

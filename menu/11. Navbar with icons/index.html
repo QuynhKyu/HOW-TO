@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+
+            font-family: Arial, sans-serif;
+        }
+        /*tạo kiểu thanh điều hướng */
+        .navbar{
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+        }
+        /* liên kết điều hướng */
+        .navbar a{
+            color: white;
+            text-decoration: none;
+            float: left;
+            text-align: center;
+            padding: 12px;
+            font-size: 17px;
+            width: 5%;
+        }
+        .navbar a:hover{
+            background-color: #000;
+        }
+        /*Liên kết thanh điều hướng hiện tại / hoạt động*/
+        .active{
+            background-color: #4CAF50;
+        }
+        /*Thêm phản hồi - sẽ tự động hiển thị thanh điều hướng theo chiều dọc thay vì theo chiều ngang trên màn hình nhỏ hơn 500 pixel*/
+        @media screen and (max-width: 500px){
+            .navbar a{
+                float: none;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="navbar">
+        <a class="active" href="#"> <i class="fa fa-fw fa-home"> Home </i></a>
+        <a  href="#"> <i class="fa fa-fw fa-search"> Search </i></a>
+        <a href="#"> <i class="fa fa-fw fa-envelope"> Contact </i></a>
+        <a  href="#"> <i class="fa fa-fw fa-user"> Login </i></a>
+    </div>
+</body>
+</html>

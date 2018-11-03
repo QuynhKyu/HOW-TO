@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            font-family: Lato, sans-serif;
+        }
+        /*menu điều hướng bên */
+        .sidenav{
+            height: 100%;/* 100% tràn chiều cao*/
+            width: 0;/*độ rông 0- thay đổi với javascript*/
+            position: fixed;/*ở tại chỗ*/
+            z-index: 1;/*ở lại bên trên*/
+            top: 0;/*ở trên đầu*/
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;/*Vô hiệu cuộn ngang*/
+            padding-top: 60px;/*Đặt nội dung cách đầu 60px*/
+            transition: 0.5s;/*Hiệu ứng chuyển tiếp 0,5 giây để trượt trong sidenav*/
+        }
+        /*thanh điều hướng liên kết menu*/
+        .sidenav a{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        /*khi di chuột đến liên kết thanh điều hướng, thay đổi màu*/
+        .sidenav a:hover{
+            color: #f1f1f1;
+        }
+        /*Vị trí và kiểu nút đóng (góc trên cùng bên phải)*/
+        .sidenav .closebtn{
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 25px;
+            margin-left: 50px;
+        }
+        /*Nội dung trang kiểu - sử dụng nội dung này nếu bạn muốn đẩy nội dung trang sang bên phải khi bạn mở điều hướng bên*/
+
+        /*Trên màn hình nhỏ hơn, nơi chiều cao nhỏ hơn 450px, thay đổi kiểu của sidenav (ít đệm hơn và kích thước phông chữ nhỏ hơn)*/
+        @media screen and (max-height: 450px){
+            .sidenav{padding-top: 15px;}
+            .sidenav a{font-size: 18px;}
+        }
+    </style>
+    <script type="text/javascript">
+        //Đặt chiều rộng của điều hướng bên sang 250px
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        //Đặt chiều rộng của điều hướng bên thành 0
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#"> About </a>
+        <a href="#"> Services </a>
+        <a href="#"> Clients </a>
+        <a href="#"> Contact </a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+    <!-- Thêm tất cả nội dung trang bên trong div này nếu bạn muốn nav bên cạnh đẩy nội dung trang về bên phải (không được sử dụng nếu bạn chỉ muốn sidenav đặt trên đầu trang-->
+
+</body>
+</html>
